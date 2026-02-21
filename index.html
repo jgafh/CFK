@@ -6,6 +6,8 @@
     <title>CrossFit Kids | HORUS Gym El Salvador</title>
     <meta name="description" content="Programa certificado de CrossFit for Kids en El Salvador. Desarrollo físico, disciplina y diversión para niños de 3 a 18 años en HORUS Gym.">
     
+    <link rel="icon" href="cfk_isotipo.png" type="image/png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800;900&display=swap" rel="stylesheet">
@@ -16,9 +18,9 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: '#030E21', // Mantenemos la base fuerte de Horus
-                        'fun-orange': '#F97316', // Nuevo acento energético
-                        'vibrant-blue': '#3B82F6', // Nuevo azul amigable
+                        navy: '#030E21',
+                        'fun-orange': '#F97316',
+                        'vibrant-blue': '#3B82F6',
                         'light-gray': '#F3F4F6'
                     },
                     fontFamily: {
@@ -34,15 +36,16 @@
     
     <style>
         body { background-color: #030E21; color: #ffffff; }
-        /* Eliminamos el exceso de glassmorphism oscuro */
-        .nav-scrolled { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); color: #030E21 !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        
+        /* Lógica del Navbar en Scroll */
+        .nav-scrolled { background-color: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
         .nav-scrolled .nav-link { color: #030E21; }
+        .nav-scrolled .logo-text { color: #030E21; }
         .nav-scrolled .nav-btn { background-color: #F97316; color: white; }
 
         .card-pop { transition: all 0.3s ease; border: 2px solid transparent; }
         .card-pop:hover { transform: translateY(-5px); border-color: #F97316; }
         
-        /* Input styles para el formulario */
         .form-input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); padding: 0.75rem 1rem; border-radius: 0.5rem; color: white; transition: all 0.3s; }
         .form-input:focus { outline: none; border-color: #F97316; background: rgba(255,255,255,0.1); }
         .form-label { display: block; text-sm font-semibold mb-2 text-gray-300; }
@@ -51,26 +54,36 @@
 <body class="antialiased font-sans selection:bg-fun-orange selection:text-white">
 
     <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4">
-        <nav class="container mx-auto px-6 flex justify-between items-center">
-            <div class="text-2xl font-black tracking-tighter uppercase text-white leading-none">
-                HORUS <br><span class="text-fun-orange text-3xl">KIDS</span>
-            </div>
-            <div class="hidden md:flex space-x-8 font-bold text-sm tracking-wide text-white uppercase">
-                <a href="#beneficios" class="nav-link hover:text-fun-orange transition-colors">Beneficios</a>
-                <a href="#programas" class="nav-link hover:text-fun-orange transition-colors">Edades</a>
-                <a href="#tarifas" class="nav-link hover:text-fun-orange transition-colors">Tarifas</a>
-            </div>
-            <a href="#contacto" 
-               class="nav-btn bg-fun-orange hover:bg-orange-600 text-white px-6 py-3 rounded-full font-extrabold uppercase tracking-wider transition-all transform hover:scale-105 shadow-lg hidden md:block">
-                Agendar Clase Gratis
+        <nav class="container mx-auto px-6 flex justify-between items-center relative h-12">
+            
+            <a href="#" class="flex items-center gap-2 group z-10 w-1/3" aria-label="Ir al inicio">
+                <img src="cfk_isotipo.png" alt="HORUS KIDS Logo" class="h-10 w-auto group-hover:scale-110 transition-transform origin-center">
+                <div class="text-xl md:text-2xl font-black tracking-tighter uppercase leading-none logo-text text-white transition-colors">
+                    HORUS <br><span class="text-fun-orange text-2xl md:text-3xl">KIDS</span>
+                </div>
             </a>
+            
+            <div class="hidden md:flex absolute inset-0 justify-center items-center pointer-events-none">
+                <div class="flex space-x-8 font-bold text-sm tracking-wide text-white uppercase pointer-events-auto">
+                    <a href="#beneficios" class="nav-link hover:text-fun-orange transition-colors">Beneficios</a>
+                    <a href="#programas" class="nav-link hover:text-fun-orange transition-colors">Edades</a>
+                    <a href="#tarifas" class="nav-link hover:text-fun-orange transition-colors">Tarifas</a>
+                </div>
+            </div>
+
+            <div class="hidden md:flex w-1/3 justify-end z-10">
+                <a href="#contacto" 
+                   class="nav-btn bg-fun-orange hover:bg-orange-600 text-white px-6 py-3 rounded-full font-extrabold uppercase tracking-wider transition-all transform hover:scale-105 shadow-lg">
+                    Agendar Clase Gratis
+                </a>
+            </div>
         </nav>
     </header>
 
     <main>
         <section class="relative min-h-[90vh] flex items-center justify-center text-center px-4 overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-tr from-navy via-navy/80 to-vibrant-blue/40 z-10"></div>
-            <img src="https://www.crossfit.com/wp-content/uploads/2023/07/13090955/Kids_6-768x512.jpeg" alt="Kids jumping" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-tr from-navy via-navy/70 to-vibrant-blue/30 z-10"></div>
+            <img src="https://www.crossfit.com/wp-content/uploads/2023/07/13090955/Kids_6-768x512.jpeg" alt="CrossFit Kids training" class="absolute inset-0 w-full h-full object-cover">
             
             <div class="max-w-5xl mx-auto z-20 pt-20">
                 <span class="inline-block bg-vibrant-blue text-white font-bold px-4 py-1 rounded-full uppercase text-sm mb-6 tracking-wider shadow-pop">El primer Box certificado en El Salvador</span>
@@ -113,7 +126,6 @@
                     <h2 class="text-4xl md:text-5xl font-black mb-4 text-white uppercase">Programas por Edades</h2>
                     <p class="text-xl text-gray-300 max-w-3xl mx-auto">Adaptamos la intensidad, el equipo y la diversión a cada etapa del desarrollo.</p>
                 </div>
-                
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="programs-container">
                     </div>
             </div>
@@ -183,7 +195,7 @@
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-white/10">
-                             <div class="md:col-span-2">
+                            <div class="md:col-span-2">
                                 <label for="childName" class="form-label">Nombre del Niño(a) *</label>
                                 <input type="text" id="childName" required class="form-input" placeholder="Nombre de tu hijo">
                             </div>
@@ -208,7 +220,6 @@
                             <button type="submit" data-track="submit_form" class="w-full md:w-auto bg-fun-orange hover:bg-orange-600 text-white font-extrabold uppercase tracking-wider py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-pop text-lg">
                                 Enviar Solicitud Vía WhatsApp
                             </button>
-                             <p class="text-gray-400 text-xs mt-4">Al enviar, se abrirá WhatsApp con los datos precargados para que los envíes al gym.</p>
                         </div>
                     </form>
                  </div>
@@ -226,11 +237,10 @@
                  <p class="text-lg font-bold">Tu tranquilidad es nuestra prioridad.</p>
                 <p>Entendemos las preocupaciones sobre el entrenamiento de fuerza en jóvenes, especialmente respecto a las "placas de crecimiento". Queremos ser claros:</p>
                 <ul class="list-disc pl-5 space-y-2">
-                    <li><strong>Carga Cero al Inicio:</strong> En HORUS, los niños comienzan SIN PESO. Usan tubos de PVC o su propio peso corporal hasta que demuestran una mecánica de movimiento perfecta y consistente. Esto puede tomar meses o años, y está bien.</li>
-                    <li><strong>Supervisión Experta:</strong> Cada clase es dirigida por coaches certificados específicamente en CrossFit Kids, que saben cómo escalar cada ejercicio para la edad y capacidad de cada niño.</li>
-                    <li><strong>Datos vs. Miedo:</strong> Estadísticamente, la mayoría de lesiones en placas de crecimiento ocurren en deportes de alto impacto y cambios bruscos de dirección (fútbol, baloncesto) no en entornos de fuerza controlada y supervisada.</li>
+                    <li><strong>Carga Cero al Inicio:</strong> En HORUS, los niños comienzan SIN PESO. Usan tubos de PVC o su propio peso corporal hasta que demuestran una mecánica perfecta y consistente.</li>
+                    <li><strong>Supervisión Experta:</strong> Cada clase es dirigida por coaches certificados en CrossFit Kids, que saben cómo escalar cada ejercicio.</li>
+                    <li><strong>Datos vs. Miedo:</strong> Estadísticamente, la mayoría de lesiones en placas de crecimiento ocurren en deportes de alto impacto y cambios bruscos de dirección, no en entornos de fuerza controlada.</li>
                 </ul>
-                <p>Mitigamos riesgos con atención obsesiva al detalle y comunicación abierta con los padres.</p>
             </div>
             <div class="mt-8 flex justify-end">
                 <button onclick="toggleModal('modal-riesgos')" class="bg-fun-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors uppercase">Entendido</button>
@@ -241,11 +251,14 @@
     <footer class="bg-black pt-16 pb-8 px-6 text-center md:text-left">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-8">
-                <div>
-                     <span class="text-3xl font-black tracking-tighter uppercase text-white leading-none">
-                        HORUS <span class="text-fun-orange">KIDS</span>
-                    </span>
-                    <p class="text-gray-400 font-medium mt-4 leading-relaxed">Calle La Mascota y Calle N4,<br>San Salvador, El Salvador.</p>
+                <div class="flex items-center gap-4">
+                    <img src="cfk_isotipo.png" alt="HORUS KIDS Logo" class="h-16 w-auto">
+                    <div>
+                         <span class="text-3xl font-black tracking-tighter uppercase text-white leading-none">
+                            HORUS <br><span class="text-fun-orange">KIDS</span>
+                        </span>
+                        <p class="text-gray-400 font-medium mt-2 leading-relaxed">Calle La Mascota y Calle N4,<br>San Salvador, El Salvador.</p>
+                    </div>
                 </div>
                 <div class="flex flex-col items-center md:items-end">
                     <a href="tel:+50371458623" class="text-2xl font-black text-white hover:text-fun-orange transition-colors">+503 7145 8623</a>
@@ -274,20 +287,19 @@
     </footer>
 
     <script>
-        // 1. Lógica Smart Navbar (Ajustada al nuevo diseño)
+        // 1. Lógica Smart Navbar
         const navbar = document.getElementById('navbar');
-        const navLinks = document.querySelectorAll('.nav-link');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('nav-scrolled', 'py-2');
-                navbar.classList.remove('bg-transparent', 'py-4');
+                navbar.classList.add('nav-scrolled');
+                navbar.classList.remove('bg-transparent');
             } else {
-                navbar.classList.remove('nav-scrolled', 'py-2');
-                navbar.classList.add('bg-transparent', 'py-4');
+                navbar.classList.remove('nav-scrolled');
+                navbar.classList.add('bg-transparent');
             }
         });
 
-        // 2. Data Layer (Clean Code)
+        // 2. Data Layer
         const db = {
             bento: [
                 { icon: '🧠', title: 'Salud Cognitiva', desc: 'Mejora la atención, el estado de ánimo y construye una autoconfianza inquebrantable.' },
@@ -350,22 +362,10 @@
             const childAge = document.getElementById('childAge').value;
             const goals = document.getElementById('goals').value || "Sin especificar";
 
-            // Construir mensaje de WhatsApp
-            let message = `👋 Hola HORUS Gym. Quiero información sobre CrossFit Kids.%0A%0A`;
-            message += `🧑 *Padre/Madre:* ${parentName}%0A`;
-            message += `📞 *Teléfono:* ${phone}%0A`;
-            message += `🧒 *Hijo(a):* ${childName}%0A`;
-            message += `🎂 *Edad/Grupo:* ${childAge}%0A`;
-            message += `🎯 *Objetivo:* ${goals}`;
-
-            // Número de destino (HORUS)
+            const message = `👋 Hola HORUS Gym. Quiero información sobre CrossFit Kids.%0A%0A🧑 *Padre/Madre:* ${parentName}%0A📞 *Teléfono:* ${phone}%0A🧒 *Hijo(a):* ${childName}%0A🎂 *Edad/Grupo:* ${childAge}%0A🎯 *Objetivo:* ${goals}`;
             const whatsappNumber = "50371458623";
             
-            // Abrir WhatsApp en nueva pestaña
             window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-            
-            // Opcional: Resetear formulario
-            // this.reset(); 
         });
 
         // Initialize
