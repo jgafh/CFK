@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossFit Kids | HORUS Gym El Salvador</title>
+    <meta name="description" content="Programa certificado de CrossFit for Kids en El Salvador. Desarrollo físico, disciplina y diversión para niños de 3 a 18 años en HORUS Gym.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#030E21', // Mantenemos la base fuerte de Horus
+                        'fun-orange': '#F97316', // Nuevo acento energético
+                        'vibrant-blue': '#3B82F6', // Nuevo azul amigable
+                        'light-gray': '#F3F4F6'
+                    },
+                    fontFamily: {
+                        sans: ['"Work Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'pop': '0 10px 25px -5px rgba(249, 115, 22, 0.3), 0 8px 10px -6px rgba(249, 115, 22, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { background-color: #030E21; color: #ffffff; }
+        /* Eliminamos el exceso de glassmorphism oscuro */
+        .nav-scrolled { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); color: #030E21 !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .nav-scrolled .nav-link { color: #030E21; }
+        .nav-scrolled .nav-btn { background-color: #F97316; color: white; }
+
+        .card-pop { transition: all 0.3s ease; border: 2px solid transparent; }
+        .card-pop:hover { transform: translateY(-5px); border-color: #F97316; }
+        
+        /* Input styles para el formulario */
+        .form-input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); padding: 0.75rem 1rem; border-radius: 0.5rem; color: white; transition: all 0.3s; }
+        .form-input:focus { outline: none; border-color: #F97316; background: rgba(255,255,255,0.1); }
+        .form-label { display: block; text-sm font-semibold mb-2 text-gray-300; }
+    </style>
+</head>
+<body class="antialiased font-sans selection:bg-fun-orange selection:text-white">
+
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter uppercase text-white leading-none">
+                HORUS <br><span class="text-fun-orange text-3xl">KIDS</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-bold text-sm tracking-wide text-white uppercase">
+                <a href="#beneficios" class="nav-link hover:text-fun-orange transition-colors">Beneficios</a>
+                <a href="#programas" class="nav-link hover:text-fun-orange transition-colors">Edades</a>
+                <a href="#tarifas" class="nav-link hover:text-fun-orange transition-colors">Tarifas</a>
+            </div>
+            <a href="#contacto" 
+               class="nav-btn bg-fun-orange hover:bg-orange-600 text-white px-6 py-3 rounded-full font-extrabold uppercase tracking-wider transition-all transform hover:scale-105 shadow-lg hidden md:block">
+                Agendar Clase Gratis
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="relative min-h-[90vh] flex items-center justify-center text-center px-4 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-navy via-navy/80 to-vibrant-blue/40 z-10"></div>
+            <img src="https://www.crossfit.com/wp-content/uploads/2023/07/13090955/Kids_6-768x512.jpeg" alt="Kids jumping" class="absolute inset-0 w-full h-full object-cover">
+            
+            <div class="max-w-5xl mx-auto z-20 pt-20">
+                <span class="inline-block bg-vibrant-blue text-white font-bold px-4 py-1 rounded-full uppercase text-sm mb-6 tracking-wider shadow-pop">El primer Box certificado en El Salvador</span>
+                <h1 class="text-5xl md:text-8xl font-black mb-6 leading-none uppercase text-white drop-shadow-lg">
+                    Construyendo <span class="text-transparent bg-clip-text bg-gradient-to-r from-fun-orange to-yellow-400">futuro</span> con fuerza y diversión.
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-md">
+                    Aleja a tus hijos de las pantallas y dale las herramientas para una vida saludable. Disciplina, comunidad y movimiento real en HORUS Gym.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contacto" 
+                       class="bg-fun-orange hover:bg-orange-600 text-white font-extrabold uppercase tracking-wider py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-pop flex items-center justify-center gap-2 text-lg">
+                        Inscribir a mi hijo hoy
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                    </a>
+                     <button onclick="toggleModal('modal-riesgos')" class="bg-white/10 hover:bg-white/20 text-white font-bold uppercase tracking-wider py-4 px-10 rounded-full transition-all backdrop-blur-sm border-2 border-white/30">
+                        Seguridad ante todo
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="beneficios" class="py-24 bg-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-4 text-navy uppercase">Más que sudor, <span class="text-vibrant-blue">crecimiento integral.</span></h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto text-lg font-medium">Combatimos el sedentarismo con ciencia y diversión. Los beneficios van mucho más allá de lo físico.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="bento-container">
+                    </div>
+            </div>
+        </section>
+
+        <section id="programas" class="py-24 bg-navy relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-fun-orange/10 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-vibrant-blue/10 rounded-full filter blur-3xl translate-x-1/2 translate-y-1/2"></div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-4 text-white uppercase">Programas por Edades</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">Adaptamos la intensidad, el equipo y la diversión a cada etapa del desarrollo.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="programs-container">
+                    </div>
+            </div>
+        </section>
+        
+        <section id="tarifas" class="py-24 bg-light-gray">
+             <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-4 text-navy uppercase">Inversión en su futuro</h2>
+                    <p class="text-gray-600 text-lg">Precios claros. Sin matrículas ocultas. Cupos limitados por clase para atención personalizada.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border-2 border-transparent hover:border-gray-200 transition-all text-navy text-center relative overflow-hidden">
+                        <h3 class="text-2xl font-black uppercase mb-4">Plan Mensual</h3>
+                        <div class="flex justify-center items-start mb-6">
+                            <span class="text-3xl font-bold mt-2">$</span>
+                            <span class="text-6xl font-black tracking-tighter">65</span>
+                            <span class="text-gray-500 font-bold self-end mb-2">/mes</span>
+                        </div>
+                        <ul class="text-left space-y-4 mb-8 text-gray-600 font-medium inline-block">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Acceso a todas las clases de su nivel</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Atención personalizada de coaches</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Sin contrato a largo plazo</li>
+                        </ul>
+                        <a href="#contacto" class="block w-full py-4 bg-navy text-white font-bold rounded-xl hover:bg-opacity-90 transition-all uppercase tracking-wider">Elegir Mensual</a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-pop border-4 border-fun-orange text-navy text-center relative overflow-hidden transform md:scale-105 z-10">
+                        <div class="absolute top-0 right-0 bg-fun-orange text-white text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-widest">Mejor Valor</div>
+                        <h3 class="text-2xl font-black uppercase mb-4 text-fun-orange">Plan Anual Automático</h3>
+                         <p class="text-sm text-gray-500 mb-2 font-bold uppercase">Pago recurrente mes a mes</p>
+                        <div class="flex justify-center items-start mb-6">
+                             <span class="text-3xl font-bold mt-2 text-fun-orange">$</span>
+                            <span class="text-7xl font-black tracking-tighter text-fun-orange">55</span>
+                            <span class="text-gray-500 font-bold self-end mb-2">/mes</span>
+                        </div>
+                        <ul class="text-left space-y-4 mb-8 text-gray-600 font-medium inline-block">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-fun-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Todo lo incluido en el plan mensual</li>
+                             <li class="flex items-center"><svg class="w-5 h-5 text-fun-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Ahorro de $120 al año</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-fun-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Compromiso de 12 meses</li>
+                             <li class="flex items-center"><svg class="w-5 h-5 text-fun-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Pago automático sin preocupaciones</li>
+                        </ul>
+                        <a href="#contacto" class="block w-full py-4 bg-fun-orange hover:bg-orange-600 text-white font-extrabold rounded-xl transition-all uppercase tracking-wider shadow-lg">Ahorrar ahora</a>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <section id="contacto" class="py-24 bg-navy relative">
+            <div class="container mx-auto px-6 max-w-4xl relative z-10">
+                 <div class="bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl backdrop-blur-sm">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl md:text-4xl font-black mb-4 text-white uppercase">¿Listo para empezar?</h2>
+                        <p class="text-gray-300 text-lg">Déjanos tus datos y los de tu hijo. Te contactaremos vía WhatsApp para agendar su primera clase de prueba.</p>
+                    </div>
+
+                    <form id="leadForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="parentName" class="form-label">Nombre del Padre/Madre *</label>
+                                <input type="text" id="parentName" required class="form-input" placeholder="Tu nombre completo">
+                            </div>
+                            <div>
+                                <label for="phone" class="form-label">Teléfono / WhatsApp *</label>
+                                <input type="tel" id="phone" required class="form-input" placeholder="+503 7777-7777">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-white/10">
+                             <div class="md:col-span-2">
+                                <label for="childName" class="form-label">Nombre del Niño(a) *</label>
+                                <input type="text" id="childName" required class="form-input" placeholder="Nombre de tu hijo">
+                            </div>
+                             <div>
+                                <label for="childAge" class="form-label">Edad *</label>
+                                <select id="childAge" required class="form-input appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-13%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2013l128%20128c3.6%203.6%207.9%205.4%2013%205.4s9.3-1.8%2013-5.4l128-128c3.6-3.6%205.4-7.9%205.4-13%200-5-1.8-9.3-5.4-13z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.7em] bg-[right_0.7rem_center] bg-no-repeat pr-8">
+                                    <option value="" class="text-gray-500">Selecciona</option>
+                                    <option value="3-5" class="text-navy">3-5 años (Preschool)</option>
+                                    <option value="5-12" class="text-navy">5-12 años (Kids)</option>
+                                    <option value="10-12" class="text-navy">10-12 años (Preteens)</option>
+                                    <option value="12-18" class="text-navy">12-18 años (Teens)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="goals" class="form-label">¿Algún objetivo o preocupación específica?</label>
+                            <textarea id="goals" rows="3" class="form-input" placeholder="Ej. Mejorar condición física, combatir sedentarismo, apoyo a otro deporte..."></textarea>
+                        </div>
+
+                        <div class="text-center pt-6">
+                            <button type="submit" data-track="submit_form" class="w-full md:w-auto bg-fun-orange hover:bg-orange-600 text-white font-extrabold uppercase tracking-wider py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-pop text-lg">
+                                Enviar Solicitud Vía WhatsApp
+                            </button>
+                             <p class="text-gray-400 text-xs mt-4">Al enviar, se abrirá WhatsApp con los datos precargados para que los envíes al gym.</p>
+                        </div>
+                    </form>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal-riesgos" class="fixed inset-0 z-[100] hidden items-center justify-center bg-navy/90 backdrop-blur-md p-4 transition-opacity" aria-modal="true" role="dialog">
+        <div class="bg-white text-navy rounded-3xl max-w-2xl w-full p-8 shadow-2xl relative border-4 border-fun-orange">
+             <button onclick="toggleModal('modal-riesgos')" aria-label="Cerrar modal" class="absolute top-4 right-4 text-gray-400 hover:text-fun-orange transition-colors bg-gray-100 rounded-full p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h3 class="text-2xl font-black mb-6 text-fun-orange uppercase">Compromiso con la Seguridad</h3>
+            <div class="text-gray-700 space-y-4 max-h-[60vh] overflow-y-auto pr-2 text-sm leading-relaxed font-medium">
+                 <p class="text-lg font-bold">Tu tranquilidad es nuestra prioridad.</p>
+                <p>Entendemos las preocupaciones sobre el entrenamiento de fuerza en jóvenes, especialmente respecto a las "placas de crecimiento". Queremos ser claros:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Carga Cero al Inicio:</strong> En HORUS, los niños comienzan SIN PESO. Usan tubos de PVC o su propio peso corporal hasta que demuestran una mecánica de movimiento perfecta y consistente. Esto puede tomar meses o años, y está bien.</li>
+                    <li><strong>Supervisión Experta:</strong> Cada clase es dirigida por coaches certificados específicamente en CrossFit Kids, que saben cómo escalar cada ejercicio para la edad y capacidad de cada niño.</li>
+                    <li><strong>Datos vs. Miedo:</strong> Estadísticamente, la mayoría de lesiones en placas de crecimiento ocurren en deportes de alto impacto y cambios bruscos de dirección (fútbol, baloncesto) no en entornos de fuerza controlada y supervisada.</li>
+                </ul>
+                <p>Mitigamos riesgos con atención obsesiva al detalle y comunicación abierta con los padres.</p>
+            </div>
+            <div class="mt-8 flex justify-end">
+                <button onclick="toggleModal('modal-riesgos')" class="bg-fun-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors uppercase">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-black pt-16 pb-8 px-6 text-center md:text-left">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-8">
+                <div>
+                     <span class="text-3xl font-black tracking-tighter uppercase text-white leading-none">
+                        HORUS <span class="text-fun-orange">KIDS</span>
+                    </span>
+                    <p class="text-gray-400 font-medium mt-4 leading-relaxed">Calle La Mascota y Calle N4,<br>San Salvador, El Salvador.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <a href="tel:+50371458623" class="text-2xl font-black text-white hover:text-fun-orange transition-colors">+503 7145 8623</a>
+                    <a href="mailto:omerino@gammasolutions.dev" class="text-vibrant-blue font-bold hover:underline mt-2">omerino@gammasolutions.dev</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4 font-medium uppercase tracking-wider">
+                <p>&copy; 2026 HORUS Gym El Salvador. Todos los derechos reservados.</p>
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+                    <span>Powered by <a href="https://gammasolutions.dev" target="_blank" class="text-vibrant-blue font-bold hover:underline transition-all">Soluciones GAMMA</a></span>
+                    <div class="flex items-center space-x-4">
+                        <a href="mailto:info@gammasolutions.dev" class="hover:text-vibrant-blue transition-colors" aria-label="Email">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" /><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" /></svg>
+                        </a>
+                        <a href="https://instagram.com/gammasolutions.dev" target="_blank" class="hover:text-pink-500 transition-colors" aria-label="Instagram">
+                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849 1.498-3.227 1.691-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="https://wa.me/50372076611" target="_blank" class="hover:text-green-500 transition-colors" aria-label="WhatsApp">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Lógica Smart Navbar (Ajustada al nuevo diseño)
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled', 'py-2');
+                navbar.classList.remove('bg-transparent', 'py-4');
+            } else {
+                navbar.classList.remove('nav-scrolled', 'py-2');
+                navbar.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+        // 2. Data Layer (Clean Code)
+        const db = {
+            bento: [
+                { icon: '🧠', title: 'Salud Cognitiva', desc: 'Mejora la atención, el estado de ánimo y construye una autoconfianza inquebrantable.' },
+                { icon: '🛡️', title: 'Prevención', desc: 'Combate activamente la obesidad infantil y el riesgo de diabetes tipo 2.' },
+                { icon: '🚀', title: 'Rendimiento', desc: 'Desarrolla una base atlética funcional que mejora el desempeño en cualquier otro deporte.' }
+            ],
+            programs: [
+                { age: '3-5 años', name: 'Preschool', desc: 'Pura diversión. Movimientos sin carga (solo PVC o peso corporal). Juegos y circuitos cortos.', color: 'bg-fun-orange' },
+                { age: '5-12 años', name: 'Kids', desc: 'Introducción a equipo ligero (balones, mancuernas adaptadas). WODs cortos y enfoque en mecánica.', color: 'bg-vibrant-blue' },
+                { age: '10-12 años', name: 'Preteens', desc: 'Transición estructurada. El "trabajo duro" se vuelve un reto divertido. Técnica impecable como prioridad.', color: 'bg-purple-500' },
+                { age: '12-18 años', name: 'Teens', desc: 'Preparación atlética seria. Enfoque en PRs, competencia sana y habilidades complejas.', color: 'bg-red-500' }
+            ]
+        };
+
+        // Render Functions
+        const renderBento = () => {
+            const container = document.getElementById('bento-container');
+            container.innerHTML = db.bento.map(item => `
+                <div class="bg-white p-8 rounded-3xl shadow-lg card-pop text-center">
+                    <div class="text-5xl mb-6 bg-light-gray w-20 h-20 mx-auto rounded-full flex items-center justify-center shadow-sm">${item.icon}</div>
+                    <h3 class="text-xl font-black mb-3 text-navy uppercase">${item.title}</h3>
+                    <p class="text-gray-600 font-medium leading-relaxed">${item.desc}</p>
+                </div>
+            `).join('');
+        };
+
+        const renderPrograms = () => {
+            const container = document.getElementById('programs-container');
+            container.innerHTML = db.programs.map(prog => `
+                <div class="bg-navy/50 border-2 border-white/10 p-6 rounded-2xl hover:-translate-y-2 transition-transform relative overflow-hidden group backdrop-blur-sm">
+                    <div class="absolute top-0 left-0 w-full h-2 ${prog.color}"></div>
+                    <span class="text-xs font-bold ${prog.color} text-white px-3 py-1 rounded-full uppercase tracking-wider">${prog.age}</span>
+                    <h3 class="text-2xl font-black mt-4 mb-2 text-white uppercase">${prog.name}</h3>
+                    <p class="text-gray-300 text-sm font-medium leading-relaxed">${prog.desc}</p>
+                </div>
+            `).join('');
+        };
+
+        // Modal Logic
+        const toggleModal = (modalID) => {
+            const modal = document.getElementById(modalID);
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        // 3. Lógica del Formulario a WhatsApp (Cero-Backend)
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const parentName = document.getElementById('parentName').value;
+            const phone = document.getElementById('phone').value;
+            const childName = document.getElementById('childName').value;
+            const childAge = document.getElementById('childAge').value;
+            const goals = document.getElementById('goals').value || "Sin especificar";
+
+            // Construir mensaje de WhatsApp
+            let message = `👋 Hola HORUS Gym. Quiero información sobre CrossFit Kids.%0A%0A`;
+            message += `🧑 *Padre/Madre:* ${parentName}%0A`;
+            message += `📞 *Teléfono:* ${phone}%0A`;
+            message += `🧒 *Hijo(a):* ${childName}%0A`;
+            message += `🎂 *Edad/Grupo:* ${childAge}%0A`;
+            message += `🎯 *Objetivo:* ${goals}`;
+
+            // Número de destino (HORUS)
+            const whatsappNumber = "50371458623";
+            
+            // Abrir WhatsApp en nueva pestaña
+            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+            
+            // Opcional: Resetear formulario
+            // this.reset(); 
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBento();
+            renderPrograms();
+        });
+    </script>
+</body>
+</html>
